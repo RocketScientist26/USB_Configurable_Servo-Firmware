@@ -1,0 +1,2 @@
+settings.c:35:6:Settings_Read	16	static
+settings.c:155:6:Settings_Write	16	static

@@ -1,0 +1,4 @@
+motor.c:13:6:Motor_SysTick_Interrupt	8	static
+motor.c:25:6:Motor_Set	16	static
+motor.c:45:9:Motor_Get	4	static
+motor.c:53:6:Motor_Init	8	static

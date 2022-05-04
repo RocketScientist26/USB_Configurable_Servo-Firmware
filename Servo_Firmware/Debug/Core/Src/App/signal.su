@@ -1,0 +1,6 @@
+signal.c:20:6:Signal_SysTick_Interrupt	8	static
+signal.c:29:6:Signal_Interrupt	24	static
+signal.c:55:10:Signal_Read_Timer	4	static
+signal.c:58:6:Signal_Timer_Reset	4	static
+signal.c:61:9:Signal_Read	16	static
+signal.c:81:6:Signal_Init	8	static

@@ -1,0 +1,8 @@
+usb.c:45:9:USB_Det_Read	16	static
+usb.c:64:6:USB_Det_Interrupt	8	static
+usb.c:74:6:USB_Init	8	static
+usb.c:81:6:USB_Packet_Received	16	static
+usb.c:101:6:USB_Parse_Config	16	static
+usb.c:104:6:USB_Send_Config	16	static
+usb.c:132:6:USB_Parse_Status	24	static
+usb.c:168:6:USB_Send_Status	16	static
