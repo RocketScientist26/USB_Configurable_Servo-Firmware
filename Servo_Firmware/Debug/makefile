@@ -60,6 +60,9 @@ Servo_Firmware.list \
 OBJCOPY_HEX += \
 Servo_Firmware.hex \
 
+OBJCOPY_BIN += \
+Servo_Firmware.bin \
+
 
 # All Target
 all: main-build
@@ -88,12 +91,17 @@ Servo_Firmware.hex: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
+Servo_Firmware.bin: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "Servo_Firmware.bin"
+	@echo 'Finished building: $@'
+	@echo ' '
+
 # Other Targets
 clean:
-	-$(RM) Servo_Firmware.elf Servo_Firmware.hex Servo_Firmware.list Servo_Firmware.map default.size.stdout
+	-$(RM) Servo_Firmware.bin Servo_Firmware.elf Servo_Firmware.hex Servo_Firmware.list Servo_Firmware.map default.size.stdout
 	-@echo ' '
 
-secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX)
+secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST) $(OBJCOPY_HEX) $(OBJCOPY_BIN)
 
 fail-specified-linker-script-missing:
 	@echo 'Error: Cannot find the specified linker script. Check the linker settings in the build configuration.'

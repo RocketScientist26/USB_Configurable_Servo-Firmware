@@ -5324,9 +5324,9 @@ static void MX_GPIO_Init(void)
  800283e:	2007      	movs	r0, #7
  8002840:	f000 ffe7 	bl	8003812 <HAL_NVIC_EnableIRQ>
 
-  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 2, 0);
  8002844:	2200      	movs	r2, #0
- 8002846:	2100      	movs	r1, #0
+ 8002846:	2102      	movs	r1, #2
  8002848:	2017      	movs	r0, #23
  800284a:	f000 ffc6 	bl	80037da <HAL_NVIC_SetPriority>
   HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
