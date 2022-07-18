@@ -1,2 +1,2 @@
-general.c:4:6:General_Copy_32_Bit	24	static
-general.c:11:6:General_Copy_16_Bit	24	static
+../Core/Src/App/general.c:4:6:General_Copy_32_Bit	24	static
+../Core/Src/App/general.c:11:6:General_Copy_16_Bit	24	static

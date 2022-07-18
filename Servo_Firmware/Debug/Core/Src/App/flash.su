@@ -1,2 +1,2 @@
-flash.c:4:6:Flash_Read	32	static
-flash.c:11:6:Flash_Write	56	static
+../Core/Src/App/flash.c:4:6:Flash_Read	32	static
+../Core/Src/App/flash.c:11:6:Flash_Write	72	static

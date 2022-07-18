@@ -32,9 +32,9 @@ void Signal_Interrupt(){
 			Signal_Timer_Reset();
 			signal_present = 1;
 		}else if(signal_present){
-			float received_length_ms  = (Signal_Read_Timer() + 1) / 500.0f;
-			if((received_length_ms <= signal_length) && (received_length_ms >= 1.0f)){
-				float new_pid_setpoint = ((potentiometer_max - potentiometer_min) * ((received_length_ms - 1.0f) / (signal_length - 1.0f))) + potentiometer_min;
+			float received_length_ms  = ((float)Signal_Read_Timer() + 1.0f) / 500.0f;
+			if(((float)received_length_ms <= (float)signal_length) && ((float)received_length_ms >= 1.0f)){
+				float new_pid_setpoint = (((float)potentiometer_max - (float)potentiometer_min) * ((received_length_ms - 1.0f) / ((float)signal_length - 1.0f))) + (float)potentiometer_min;
 				if(pid_setpoint != new_pid_setpoint){
 					led_position_changed = 1;
 				}
