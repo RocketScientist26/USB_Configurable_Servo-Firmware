@@ -32,6 +32,7 @@ void PID_Timer_Stop(){
 }
 void PID_Timer_Restart(){
 	HAL_TIM_Base_Stop_IT(&htim3);
+	__HAL_TIM_SET_COUNTER(&htim3, 0);
 	HAL_TIM_Base_Start_IT(&htim3);
 }
 void PID_Timer_Interrupt(){

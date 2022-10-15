@@ -14,7 +14,6 @@ float potentiometer_position = 0;
 
 void Potentiometer_ADC_Interrupt(){
 	potentiometer_adctmp += HAL_ADC_GetValue(&hadc1);
-	HAL_ADC_Stop_IT(&hadc1);
 	potentiometer_adccnt++;
 	if(potentiometer_adccnt == POTENTIOMETER_SAMPLE_CNT){
 		potentiometer_position = (float)potentiometer_adctmp/POTENTIOMETER_SAMPLE_CNT;
@@ -23,7 +22,6 @@ void Potentiometer_ADC_Interrupt(){
 		potentiometer_adctmp = 0;
 	}
 	potentiometer_init_cplt = 1;
-	HAL_ADC_Start_IT(&hadc1);
 }
 
 void Potentiometer_Init(){

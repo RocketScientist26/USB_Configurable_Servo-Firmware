@@ -27,14 +27,15 @@ void Signal_SysTick_Interrupt(){
 	}
 }
 void Signal_Interrupt(){
+	uint32_t cnt = Signal_Read_Timer();
 	if(!signal_ignore || (signal_ignore && (!usb_present))){
 		if(Signal_Read() == SIGNAL_HIGH){
 			Signal_Timer_Reset();
 			signal_present = 1;
 		}else if(signal_present){
-			float received_length_ms  = ((float)Signal_Read_Timer() + 1.0f) / 500.0f;
-			if(((float)received_length_ms <= (float)signal_length) && ((float)received_length_ms >= 1.0f)){
-				float new_pid_setpoint = (((float)potentiometer_max - (float)potentiometer_min) * ((received_length_ms - 1.0f) / ((float)signal_length - 1.0f))) + (float)potentiometer_min;
+			float received_length_ms  = (float)((uint32_t)cnt + (uint32_t)1) / 500.0f;
+			if((received_length_ms <= signal_length) && (received_length_ms >= 1.0f)){
+				float new_pid_setpoint = (((float)potentiometer_max - (float)potentiometer_min) * ((received_length_ms - 1.0f) / (signal_length - 1.0f))) + (float)potentiometer_min;
 				if(pid_setpoint != new_pid_setpoint){
 					led_position_changed = 1;
 				}

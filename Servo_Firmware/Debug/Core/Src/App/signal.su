@@ -1,6 +1,6 @@
 ../Core/Src/App/signal.c:20:6:Signal_SysTick_Interrupt	8	static
-../Core/Src/App/signal.c:29:6:Signal_Interrupt	24	static
-../Core/Src/App/signal.c:55:10:Signal_Read_Timer	4	static
-../Core/Src/App/signal.c:58:6:Signal_Timer_Reset	4	static
-../Core/Src/App/signal.c:61:9:Signal_Read	16	static
-../Core/Src/App/signal.c:81:6:Signal_Init	8	static
+../Core/Src/App/signal.c:29:6:Signal_Interrupt	32	static
+../Core/Src/App/signal.c:56:10:Signal_Read_Timer	4	static
+../Core/Src/App/signal.c:59:6:Signal_Timer_Reset	4	static
+../Core/Src/App/signal.c:62:9:Signal_Read	16	static
+../Core/Src/App/signal.c:82:6:Signal_Init	8	static

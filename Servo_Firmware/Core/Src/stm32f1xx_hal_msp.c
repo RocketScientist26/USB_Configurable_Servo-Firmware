@@ -72,8 +72,6 @@ void HAL_MspInit(void)
   __HAL_RCC_AFIO_CLK_ENABLE();
   __HAL_RCC_PWR_CLK_ENABLE();
 
-  HAL_NVIC_SetPriorityGrouping(NVIC_PRIORITYGROUP_3);
-
   /* System interrupt init*/
 
   /** NOJTAG: JTAG-DP Disabled and SW-DP Enabled
@@ -111,7 +109,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
     HAL_GPIO_Init(POTENTIOMETER_GPIO_Port, &GPIO_InitStruct);
 
     /* ADC1 interrupt Init */
-    HAL_NVIC_SetPriority(ADC1_2_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(ADC1_2_IRQn, 2, 0);
     HAL_NVIC_EnableIRQ(ADC1_2_IRQn);
   /* USER CODE BEGIN ADC1_MspInit 1 */
 

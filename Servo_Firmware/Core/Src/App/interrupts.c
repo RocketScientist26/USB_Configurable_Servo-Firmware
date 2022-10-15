@@ -25,9 +25,12 @@ void Interrupts_SysTick(){
 	LED_SysTick_Interrupt();
 }
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-	if(GPIO_Pin == SIGNAL_Pin){
-		Signal_Interrupt();
-	}else if(GPIO_Pin == USB_DET_Pin){
-		USB_Det_Interrupt();
+	switch(GPIO_Pin){
+		case SIGNAL_Pin:
+			Signal_Interrupt();
+		break;
+		case USB_DET_Pin:
+			USB_Det_Interrupt();
+		break;
 	}
 }
