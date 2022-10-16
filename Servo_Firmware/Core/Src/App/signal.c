@@ -21,8 +21,11 @@ void Signal_SysTick_Interrupt(){
 	if(((float)(Signal_Read_Timer() + 1) / 500.0f) > signal_timeout){
 		signal_present = 0;
 		Signal_Timer_Reset();
-		if((!signal_ignore || (signal_ignore && (!usb_present))) && pid_running){
-			PID_Stop();
+		if(!signal_ignore || (signal_ignore && (!usb_present))){
+			if(pid_running){
+				PID_Stop();
+			}
+			pid_setpoint = 0;
 		}
 	}
 }
