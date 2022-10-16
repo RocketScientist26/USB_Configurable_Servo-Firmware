@@ -34,10 +34,10 @@ uint8_t settings[SETTINGS_TOTAL_LENGTH];
 
 void Settings_Read(){
 	//Read
-	Flash_Read(&settings[0], SETTINGS_FLASH_ADDRESS, SETTINGS_TOTAL_LENGTH);
+	Flash_Read(settings, SETTINGS_FLASH_ADDRESS, SETTINGS_TOTAL_LENGTH);
 	//Get CRC
 	uint32_t crc = 0;
-	General_Copy_32_Bit((uint32_t)&crc, (uint32_t)&settings[32]);
+	General_Copy_32_Bit((uint32_t)&crc, (uint32_t)&settings[SETTINGS_TOTAL_LENGTH - 4]);
 	//If CRC is correct
 	if(HAL_CRC_Calculate(&hcrc, (uint32_t *)settings, (SETTINGS_TOTAL_LENGTH / 4) - 1) == crc){
 		//Parse
@@ -177,5 +177,5 @@ void Settings_Write(){
 	settings[59] = SETTINGS_CRC_PADDING;
 	uint32_t crc = HAL_CRC_Calculate(&hcrc, (uint32_t *)settings, (SETTINGS_TOTAL_LENGTH / 4) - 1);
 	General_Copy_32_Bit((uint32_t)&settings[60], (uint32_t)&crc);
-	Flash_Write(&settings[0], SETTINGS_FLASH_ADDRESS, SETTINGS_TOTAL_LENGTH);
+	Flash_Write(settings, SETTINGS_FLASH_ADDRESS, SETTINGS_TOTAL_LENGTH);
 }

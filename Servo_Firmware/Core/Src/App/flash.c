@@ -21,16 +21,21 @@ void Flash_Write(uint8_t *data, uint32_t address, uint32_t length){
 	uint16_t lbytes = length-(fpages*4);
 	uint16_t i = 0;
 	while(i != (fpages*4)){
-		HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, address + i, ((uint32_t)data[i]<<24)|((uint32_t)data[i+1]<<16)|((uint32_t)data[i+2]<<8)|(uint32_t)data[i+3]);
+		HAL_FLASH_Program(FLASH_TYPEPROGRAM_WORD, address + i,
+				((uint32_t)data[i+3]<<24)|
+				((uint32_t)data[i+2]<<16)|
+				((uint32_t)data[i+1]<<8)|
+				(uint32_t)data[i]
+		);
 		i+=4;
 	}
 	if(lbytes != 0){
 		uint32_t wdata = 0;
 		if(lbytes == 3){
-			wdata = ((uint32_t)data[i]<<24)|((uint32_t)data[i+1]<<16)|((uint32_t)data[i+2]<<8);
+			wdata = ((uint32_t)data[i+2]<<24)|((uint32_t)data[i+1]<<16)|((uint32_t)data[i]<<8);
 		}
 		else if(lbytes == 2){
-			wdata = ((uint32_t)data[i]<<24)|((uint32_t)data[i+1]<<16);
+			wdata = ((uint32_t)data[i+1]<<24)|((uint32_t)data[i]<<16);
 		}
 		else if(lbytes == 1){
 			wdata = ((uint32_t)data[i]<<24);
