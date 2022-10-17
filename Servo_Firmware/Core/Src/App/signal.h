@@ -2,6 +2,7 @@
 #define SIGNAL_HIGH GPIO_PIN_SET
 
 void Signal_SysTick_Interrupt();
+void Signal_Timer_Interrupt();
 void Signal_Interrupt();
 uint32_t Signal_Read_Timer();
 void Signal_Timer_Reset();

@@ -17,6 +17,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 	if(htim->Instance == TIM3){
 		PID_Timer_Interrupt();
 	}
+	else if(htim->Instance == TIM4){
+		Signal_Timer_Interrupt();
+	}
 }
 
 void Interrupts_SysTick(){

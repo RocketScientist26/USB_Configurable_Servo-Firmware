@@ -16,26 +16,34 @@ float signal_length;
 float signal_timeout;
 
 uint8_t signal_present = 0;
+uint32_t signal_timeout_passed_ms = 0;
 
 void Signal_SysTick_Interrupt(){
-	if(((float)(Signal_Read_Timer() + 1) / 500.0f) > signal_timeout){
-		signal_present = 0;
-		Signal_Timer_Reset();
-		if(!signal_ignore || (signal_ignore && (!usb_present))){
-			if(pid_running){
-				PID_Stop();
+	if(signal_present){
+		if((float)signal_timeout_passed_ms >= signal_timeout){
+			signal_present = 0;
+			if(!signal_ignore || (signal_ignore && (!usb_present))){
+				if(pid_running){
+					PID_Stop();
+				}
+				pid_setpoint = 0;
 			}
-			pid_setpoint = 0;
+		}else{
+			signal_timeout_passed_ms++;
 		}
 	}
+}
+void Signal_Timer_Interrupt(){
+	signal_present = 0;
 }
 void Signal_Interrupt(){
 	uint32_t cnt = Signal_Read_Timer();
 	if(Signal_Read() == SIGNAL_HIGH){
 		Signal_Timer_Reset();
 		signal_present = 1;
+		signal_timeout_passed_ms = 0;
 	}else if(signal_present){
-		float received_length_ms  = (float)((uint32_t)cnt + (uint32_t)1) / 500.0f;
+		float received_length_ms  = (float)((uint32_t)cnt + (uint32_t)1) / 12000.0f;
 		if((received_length_ms <= signal_length) && (received_length_ms >= 1.0f)){
 			if(!signal_ignore || (signal_ignore && (!usb_present))){
 				float new_pid_setpoint = (((float)potentiometer_max - (float)potentiometer_min) * ((received_length_ms - 1.0f) / (signal_length - 1.0f))) + (float)potentiometer_min;
