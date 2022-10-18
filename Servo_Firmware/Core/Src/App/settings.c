@@ -14,7 +14,7 @@ extern uint16_t motor_max_power;
 extern uint8_t motor_invert;
 extern uint8_t signal_ignore;
 extern float signal_length;
-extern float signal_timeout;
+extern uint32_t signal_timeout;
 extern uint8_t led_mode;
 extern uint8_t pid_on;
 extern float pid_kp_1;

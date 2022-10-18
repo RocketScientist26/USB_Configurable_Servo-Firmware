@@ -13,14 +13,14 @@ extern uint8_t led_position_changed;
 
 uint8_t signal_ignore;
 float signal_length;
-float signal_timeout;
+uint32_t signal_timeout;
 
 uint8_t signal_present = 0;
 uint32_t signal_timeout_passed_ms = 0;
 
 void Signal_SysTick_Interrupt(){
 	if(signal_present){
-		if((float)signal_timeout_passed_ms >= signal_timeout){
+		if(signal_timeout_passed_ms >= signal_timeout){
 			signal_present = 0;
 			if(!signal_ignore || (signal_ignore && (!usb_present))){
 				if(pid_running){
