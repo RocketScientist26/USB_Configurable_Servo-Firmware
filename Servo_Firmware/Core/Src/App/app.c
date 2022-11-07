@@ -44,7 +44,7 @@ void PID_Ready(float output){
 
 void App_Init(){
 	Settings_Read();
-	USB_Init();
+	USB_Det();
 	Signal_Init();
 	Potentiometer_Init();
 	Motor_Init();
@@ -91,5 +91,6 @@ void App_Loop(){
 			usb_rq = USB_RQ_NONE;
 		break;
 	}
+	USB_Det();
 	LED_Update();
 }

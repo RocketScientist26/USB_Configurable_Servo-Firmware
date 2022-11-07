@@ -33,9 +33,6 @@
 				[USB_CRC_PADDING 3][CRC32 4]
 */
 
-#define USB_DET_HIGH GPIO_PIN_SET
-#define USB_DET_DEBOUNCE_SAMPLES 5
-
 //Lengths
 #define USB_RX_CONFIG_LENGTH 8
 #define USB_TX_CONFIG_LENGTH 64
@@ -58,9 +55,7 @@
 //CRC Padding
 #define USB_CRC_PADDING 0
 
-uint8_t USB_Det_Read();
-void USB_Det_Interrupt();
-void USB_Init();
+void USB_Det();
 void USB_Packet_Received(uint8_t *data, uint32_t lenght);
 void USB_Parse_Config(uint8_t *data);
 void USB_Send_Config();

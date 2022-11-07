@@ -31,7 +31,7 @@ Core/Src/App/interrupts.o: ../Core/Src/App/interrupts.c \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h \
  ../Core/Src/App/interrupts.h ../Core/Src/App/potentiometer.h \
  ../Core/Src/App/pid.h ../Core/Src/App/motor.h ../Core/Src/App/signal.h \
- ../Core/Src/App/usb.h ../Core/Src/App/led.h
+ ../Core/Src/App/led.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -68,5 +68,4 @@ Core/Src/App/interrupts.o: ../Core/Src/App/interrupts.c \
 ../Core/Src/App/pid.h:
 ../Core/Src/App/motor.h:
 ../Core/Src/App/signal.h:
-../Core/Src/App/usb.h:
 ../Core/Src/App/led.h:

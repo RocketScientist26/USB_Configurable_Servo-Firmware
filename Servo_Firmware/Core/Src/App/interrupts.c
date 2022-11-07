@@ -4,7 +4,6 @@
 #include "pid.h"
 #include "motor.h"
 #include "signal.h"
-#include "usb.h"
 #include "led.h"
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
@@ -28,12 +27,7 @@ void Interrupts_SysTick(){
 	LED_SysTick_Interrupt();
 }
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
-	switch(GPIO_Pin){
-		case SIGNAL_Pin:
-			Signal_Interrupt();
-		break;
-		case USB_DET_Pin:
-			USB_Det_Interrupt();
-		break;
+	if(GPIO_Pin == SIGNAL_Pin){
+		Signal_Interrupt();
 	}
 }

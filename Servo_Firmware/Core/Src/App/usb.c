@@ -6,6 +6,7 @@
 #include "../../../USB_DEVICE/App/usbd_cdc_if.h"
 
 extern CRC_HandleTypeDef hcrc;
+extern USBD_HandleTypeDef hUsbDeviceFS;
 
 extern uint16_t potentiometer_min;
 extern uint16_t potentiometer_max;
@@ -42,39 +43,16 @@ uint8_t usb_present = 0;
 uint8_t usb_tx_buffer[64];
 uint8_t usb_long_buffer[256];
 
-uint8_t USB_Det_Read(){
-	uint8_t level;
-	uint8_t d = 0;
-	uint8_t i = 0;
-	while(d != 1){
-		i = 0;
-		level = HAL_GPIO_ReadPin(USB_DET_GPIO_Port, USB_DET_Pin);
-		while(i != USB_DET_DEBOUNCE_SAMPLES){
-			i++;
-			if(HAL_GPIO_ReadPin(USB_DET_GPIO_Port, USB_DET_Pin) != level){
-				break;
-			}
-			if(i == USB_DET_DEBOUNCE_SAMPLES){
-				d = 1;
-			}
+void USB_Det(){
+	if((hUsbDeviceFS.dev_state == USBD_STATE_ADDRESSED) || (hUsbDeviceFS.dev_state == USBD_STATE_CONFIGURED)){
+		if(!usb_present){
+			PID_Stop();
 		}
-	}
-	return level;
-}
-void USB_Det_Interrupt(){
-	if(USB_Det_Read() == USB_DET_HIGH){
 		usb_present = 1;
 	}else{
-		usb_present = 0;
-	}
-	if(pid_running){
-		PID_Stop();
-	}
-}
-void USB_Init(){
-	if(USB_Det_Read() == USB_DET_HIGH){
-		usb_present = 1;
-	}else{
+		if(usb_present){
+			PID_Stop();
+		}
 		usb_present = 0;
 	}
 }
