@@ -71,8 +71,8 @@ all: main-build
 main-build: Servo_Firmware.elf secondary-outputs
 
 # Tool invocations
-Servo_Firmware.elf Servo_Firmware.map: $(OBJS) $(USER_OBJS) C:\Direct\Gaga\GIT\USB_Configurable_Servo-Firmware\Servo_Firmware\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Servo_Firmware.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"C:\Direct\Gaga\GIT\USB_Configurable_Servo-Firmware\Servo_Firmware\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Servo_Firmware.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Servo_Firmware.elf Servo_Firmware.map: $(OBJS) $(USER_OBJS) D:\GIT\USB_Configurable_Servo-Firmware\Servo_Firmware\STM32F103C8TX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Servo_Firmware.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m3 -T"D:\GIT\USB_Configurable_Servo-Firmware\Servo_Firmware\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Servo_Firmware.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

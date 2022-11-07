@@ -1,6 +1,8 @@
-#include "main.h" 
+#include <math.h>
+#include "main.h"
 #include "signal.h"
 #include "pid.h"
+#include "led.h"
 
 extern TIM_HandleTypeDef htim4;
 
@@ -43,21 +45,25 @@ void Signal_Interrupt(){
 		signal_present = 1;
 		signal_timeout_passed_ms = 0;
 	}else if(signal_present){
-		float received_length_ms  = (float)((uint32_t)cnt + (uint32_t)1) / 12000.0f;
-		if((received_length_ms <= signal_length) && (received_length_ms >= 1.0f)){
-			if(!signal_ignore || (signal_ignore && (!usb_present))){
+		if(!usb_present || (!signal_ignore && usb_present)){
+			float received_length_ms  = (float)((uint32_t)cnt + (uint32_t)1) / 12000.0f;
+			if((received_length_ms <= signal_length) && (received_length_ms >= 1.0f)){
 				float new_pid_setpoint = (((float)potentiometer_max - (float)potentiometer_min) * ((received_length_ms - 1.0f) / (signal_length - 1.0f))) + (float)potentiometer_min;
-				if(pid_setpoint != new_pid_setpoint){
+
+				if(
+					fabs((new_pid_setpoint - (float)potentiometer_min) - (pid_setpoint - (float)potentiometer_min)) / (((float)potentiometer_max - (float)potentiometer_min) / 100.0f)
+					>=
+					LED_POSITION_CHANGE_ACCURACY_PRCNT
+				){
 					led_position_changed = 1;
 				}
+
 				pid_setpoint = new_pid_setpoint;
 				if(!pid_running){
 					PID_Start();
 				}
-			}
-		}else{
-			signal_present = 0;
-			if(!signal_ignore || (signal_ignore && (!usb_present))){
+			}else{
+				signal_present = 0;
 				if(pid_running){
 					PID_Stop();
 				}
