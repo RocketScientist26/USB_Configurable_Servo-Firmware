@@ -35,8 +35,8 @@
 
 //Lengths
 #define USB_RX_CONFIG_LENGTH 8
-#define USB_TX_CONFIG_LENGTH 64
-#define USB_RX_STATUS_LENGTH 72
+#define USB_TX_CONFIG_LENGTH 68
+#define USB_RX_STATUS_LENGTH 76
 #define USB_TX_STATUS_LENGTH 20
 
 //Commands

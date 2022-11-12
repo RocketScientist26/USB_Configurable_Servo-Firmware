@@ -14,7 +14,8 @@ extern uint8_t usb_present;
 extern uint8_t led_position_changed;
 
 uint8_t signal_ignore;
-float signal_length;
+float signal_min;
+float signal_max;
 uint32_t signal_timeout;
 
 uint8_t signal_present = 0;
@@ -46,9 +47,9 @@ void Signal_Interrupt(){
 		signal_timeout_passed_ms = 0;
 	}else if(signal_present){
 		if(!usb_present || (!signal_ignore && usb_present)){
-			float received_length_ms  = (float)((uint32_t)cnt + (uint32_t)1) / 12000.0f;
-			if((received_length_ms <= signal_length) && (received_length_ms >= 1.0f)){
-				float new_pid_setpoint = (((float)potentiometer_max - (float)potentiometer_min) * ((received_length_ms - 1.0f) / (signal_length - 1.0f))) + (float)potentiometer_min;
+			float received_length_ms  = (float)((uint32_t)cnt + (uint32_t)1) / 24000.0f;
+			if((received_length_ms <= signal_max) && (received_length_ms >= signal_min)){
+				float new_pid_setpoint = (((float)potentiometer_max - (float)potentiometer_min) * ((received_length_ms - signal_min) / (signal_max - signal_min))) + (float)potentiometer_min;
 
 				if(
 					fabs((new_pid_setpoint - (float)potentiometer_min) - (pid_setpoint - (float)potentiometer_min)) / (((float)potentiometer_max - (float)potentiometer_min) / 100.0f)

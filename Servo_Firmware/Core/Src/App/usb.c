@@ -13,7 +13,8 @@ extern uint16_t potentiometer_max;
 extern uint16_t motor_max_power;
 extern uint8_t motor_invert;
 extern uint8_t signal_ignore;
-extern float signal_length;
+extern float signal_min;
+extern float signal_max;
 extern uint32_t signal_timeout;
 extern uint8_t led_mode;
 extern uint8_t pid_on;
@@ -87,24 +88,25 @@ void USB_Send_Config(){
 	usb_tx_buffer[6] = (uint8_t)((uint16_t)motor_max_power / 10);
 	usb_tx_buffer[7] = motor_invert;
 	usb_tx_buffer[8] = signal_ignore;
-	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[9], (uint32_t)&signal_length);
-	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[13], (uint32_t)&signal_timeout);
-	usb_tx_buffer[17] = led_mode;
-	usb_tx_buffer[18] = pid_on;
-	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[19], (uint32_t)&pid_kp_1);
-	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[23], (uint32_t)&pid_ki_1);
-	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[27], (uint32_t)&pid_kd_1);
-	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[31], (uint32_t)&pid_kp_1);
-	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[35], (uint32_t)&pid_ki_1);
-	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[39], (uint32_t)&pid_kd_1);
-	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[43], (uint32_t)&pid_kp_1);
-	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[47], (uint32_t)&pid_ki_1);
-	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[51], (uint32_t)&pid_kd_1);
-	General_Copy_16_Bit((uint32_t)&usb_tx_buffer[55], (uint32_t)&pid_split_1);
-	General_Copy_16_Bit((uint32_t)&usb_tx_buffer[57], (uint32_t)&pid_split_2);
-	usb_tx_buffer[59] = pid_sampling_time;
+	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[9], (uint32_t)&signal_min);
+	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[13], (uint32_t)&signal_max);
+	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[17], (uint32_t)&signal_timeout);
+	usb_tx_buffer[21] = led_mode;
+	usb_tx_buffer[22] = pid_on;
+	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[23], (uint32_t)&pid_kp_1);
+	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[27], (uint32_t)&pid_ki_1);
+	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[31], (uint32_t)&pid_kd_1);
+	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[35], (uint32_t)&pid_kp_1);
+	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[39], (uint32_t)&pid_ki_1);
+	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[43], (uint32_t)&pid_kd_1);
+	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[47], (uint32_t)&pid_kp_1);
+	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[51], (uint32_t)&pid_ki_1);
+	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[55], (uint32_t)&pid_kd_1);
+	General_Copy_16_Bit((uint32_t)&usb_tx_buffer[59], (uint32_t)&pid_split_1);
+	General_Copy_16_Bit((uint32_t)&usb_tx_buffer[61], (uint32_t)&pid_split_2);
+	usb_tx_buffer[63] = pid_sampling_time;
 	uint32_t crc = HAL_CRC_Calculate(&hcrc, (uint32_t *)&usb_tx_buffer, (USB_TX_CONFIG_LENGTH / 4) - 1);
-	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[60], (uint32_t)&crc);
+	General_Copy_32_Bit((uint32_t)&usb_tx_buffer[64], (uint32_t)&crc);
 	CDC_Transmit_FS((uint8_t *)&usb_tx_buffer, USB_TX_CONFIG_LENGTH);
 }
 void USB_Parse_Status(uint8_t *data){
@@ -113,35 +115,36 @@ void USB_Parse_Status(uint8_t *data){
 	motor_max_power = (uint16_t)data[6] * 10;
 	motor_invert = data[7];
 	signal_ignore = data[8];
-	General_Copy_32_Bit((uint32_t)&signal_length, (uint32_t)&data[9]);
-	General_Copy_32_Bit((uint32_t)&signal_timeout, (uint32_t)&data[13]);
-	led_mode = data[17];
-	pid_on = data[18];
-	General_Copy_32_Bit((uint32_t)&pid_kp_1, (uint32_t)&data[19]);
-	General_Copy_32_Bit((uint32_t)&pid_ki_1, (uint32_t)&data[23]);
-	General_Copy_32_Bit((uint32_t)&pid_kd_1, (uint32_t)&data[27]);
-	General_Copy_32_Bit((uint32_t)&pid_kp_2, (uint32_t)&data[31]);
-	General_Copy_32_Bit((uint32_t)&pid_ki_2, (uint32_t)&data[35]);
-	General_Copy_32_Bit((uint32_t)&pid_kd_2, (uint32_t)&data[39]);
-	General_Copy_32_Bit((uint32_t)&pid_kp_3, (uint32_t)&data[43]);
-	General_Copy_32_Bit((uint32_t)&pid_ki_3, (uint32_t)&data[47]);
-	General_Copy_32_Bit((uint32_t)&pid_kd_3, (uint32_t)&data[51]);
-	General_Copy_16_Bit((uint32_t)&pid_split_1, (uint32_t)&data[55]);
-	General_Copy_16_Bit((uint32_t)&pid_split_2, (uint32_t)&data[57]);
-	pid_sampling_time = data[59];
+	General_Copy_32_Bit((uint32_t)&signal_min, (uint32_t)&data[9]);
+	General_Copy_32_Bit((uint32_t)&signal_max, (uint32_t)&data[13]);
+	General_Copy_32_Bit((uint32_t)&signal_timeout, (uint32_t)&data[17]);
+	led_mode = data[21];
+	pid_on = data[22];
+	General_Copy_32_Bit((uint32_t)&pid_kp_1, (uint32_t)&data[23]);
+	General_Copy_32_Bit((uint32_t)&pid_ki_1, (uint32_t)&data[27]);
+	General_Copy_32_Bit((uint32_t)&pid_kd_1, (uint32_t)&data[31]);
+	General_Copy_32_Bit((uint32_t)&pid_kp_2, (uint32_t)&data[35]);
+	General_Copy_32_Bit((uint32_t)&pid_ki_2, (uint32_t)&data[39]);
+	General_Copy_32_Bit((uint32_t)&pid_kd_2, (uint32_t)&data[43]);
+	General_Copy_32_Bit((uint32_t)&pid_kp_3, (uint32_t)&data[47]);
+	General_Copy_32_Bit((uint32_t)&pid_ki_3, (uint32_t)&data[51]);
+	General_Copy_32_Bit((uint32_t)&pid_kd_3, (uint32_t)&data[55]);
+	General_Copy_16_Bit((uint32_t)&pid_split_1, (uint32_t)&data[59]);
+	General_Copy_16_Bit((uint32_t)&pid_split_2, (uint32_t)&data[61]);
+	pid_sampling_time = data[63];
 	if(PID_Get_Sampling_Time() != pid_sampling_time){
 		PID_Set_Sampling_Time(pid_sampling_time);
 	}
 	float new_pid_setpoint = 0;
-	General_Copy_32_Bit((uint32_t)&new_pid_setpoint, (uint32_t)&data[60]);
+	General_Copy_32_Bit((uint32_t)&new_pid_setpoint, (uint32_t)&data[64]);
 	if(signal_ignore){
 		if(pid_setpoint != new_pid_setpoint){
 			led_position_changed = 1;
 		}
 		pid_setpoint = new_pid_setpoint;
 	}
-	usb_rq_stat_phold = data[64];
-	usb_rq_stat_motor = data[65];
+	usb_rq_stat_phold = data[68];
+	usb_rq_stat_motor = data[69];
 }
 void USB_Send_Status(){
 	usb_tx_buffer[0] = USB_TX_STATUS_LENGTH;

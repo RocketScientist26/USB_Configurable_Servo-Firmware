@@ -1,2 +1,2 @@
-../Core/Src/App/settings.c:35:6:Settings_Read	16	static
-../Core/Src/App/settings.c:155:6:Settings_Write	16	static
+../Core/Src/App/settings.c:36:6:Settings_Read	16	static
+../Core/Src/App/settings.c:165:6:Settings_Write	16	static
