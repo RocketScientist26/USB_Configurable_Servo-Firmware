@@ -5,19 +5,19 @@
 extern TIM_HandleTypeDef htim3;
 
 //Configuration
-uint8_t pid_sampling_time = 20;
-float pid_kp_1 = 2;
-float pid_ki_1 = 0;
-float pid_kd_1 = 12;
-float pid_kp_2 = 2;
-float pid_ki_2 = 0;
-float pid_kd_2 = 12;
-float pid_kp_3 = 2;
-float pid_ki_3 = 0;
-float pid_kd_3 = 12;
-uint16_t pid_split_1 = 2048;
-uint16_t pid_split_2 = 3068;
-uint8_t pid_on = PID_ON_E;
+uint8_t pid_sampling_time;
+float pid_kp_1;
+float pid_ki_1;
+float pid_kd_1;
+float pid_kp_2;
+float pid_ki_2;
+float pid_kd_2;
+float pid_kp_3;
+float pid_ki_3;
+float pid_kd_3;
+uint16_t pid_split_1;
+uint16_t pid_split_2;
+uint8_t pid_on;
 //Data input/output
 uint8_t pid_running = 0;
 float pid_input = 0;

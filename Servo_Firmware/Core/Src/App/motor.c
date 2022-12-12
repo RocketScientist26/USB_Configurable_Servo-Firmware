@@ -5,8 +5,8 @@ extern TIM_HandleTypeDef htim2;
 
 extern uint8_t pid_running;
 
-uint8_t motor_invert = MOTOR_NORMAL;
-uint16_t motor_max_power = 1000;
+uint8_t motor_invert;
+uint16_t motor_max_power;
 uint8_t motor_running = 0;
 uint8_t motor_systick = 0;
 

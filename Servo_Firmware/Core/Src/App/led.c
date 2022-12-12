@@ -3,7 +3,7 @@
 
 extern uint8_t pid_running;
 
-uint8_t led_mode = 0;
+uint8_t led_mode;
 uint8_t led_position_changed = 0;
 uint8_t led_systick = 0;
 
