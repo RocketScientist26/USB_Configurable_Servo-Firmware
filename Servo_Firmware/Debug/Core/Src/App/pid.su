@@ -3,6 +3,6 @@
 ../Core/Src/App/pid.c:38:6:PID_Timer_Interrupt	8	static
 ../Core/Src/App/pid.c:44:10:PID_Get_Sampling_Time	4	static
 ../Core/Src/App/pid.c:47:6:PID_Set_Sampling_Time	16	static
-../Core/Src/App/pid.c:50:6:PID_Compute	32	static
-../Core/Src/App/pid.c:130:6:PID_Start	8	static
-../Core/Src/App/pid.c:137:6:PID_Stop	8	static
+../Core/Src/App/pid.c:50:6:PID_Compute	48	static
+../Core/Src/App/pid.c:100:6:PID_Start	8	static
+../Core/Src/App/pid.c:107:6:PID_Stop	8	static

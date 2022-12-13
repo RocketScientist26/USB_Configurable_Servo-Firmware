@@ -53,77 +53,47 @@ void PID_Compute(){
 	float input_d = (input - pid_last_input);
 	float output = 0;
 
+	//Select parameters for range
+	float kp, ki, kd;
 	if(error >= pid_split_1){
-		pid_output_sum += pid_ki_1 * error;
-		if(pid_on == PID_ON_M){
-			pid_output_sum -= pid_kp_1 * input_d;
-		}
-
-		if(pid_output_sum > 1000.0f){
-			pid_output_sum = 1000.0f;
-		}else if(pid_output_sum < -1000.0f){
-			pid_output_sum = -1000.0f;
-		}
-
-		if(pid_on == PID_ON_E){
-			output = pid_kp_1 * error;
-		}
-
-		output += pid_output_sum - pid_kd_1 * input_d;
-		if(output > 1000.0f){
-			output = 1000.0f;
-		}
-		else if(output < -1000.0f){
-			output = -1000.0f;
-		}
+		kp = pid_kp_1;
+		ki = pid_ki_1;
+		kd = pid_kd_1;
 	}else if((error < pid_split_1) && (error >= pid_split_2)){
-		pid_output_sum += pid_ki_2 * error;
-		if(pid_on == PID_ON_M){
-			pid_output_sum -= pid_kp_2 * input_d;
-		}
-
-		if(pid_output_sum > 1000.0f){
-			pid_output_sum = 1000.0f;
-		}else if(pid_output_sum < -1000.0f){
-			pid_output_sum = -1000.0f;
-		}
-
-		if(pid_on == PID_ON_E){
-			output = pid_kp_2 * error;
-		}
-
-		output += pid_output_sum - pid_kd_2 * input_d;
-		if(output > 1000.0f){
-			output = 1000.0f;
-		}
-		else if(output < -1000.0f){
-			output = -1000.0f;
-		}
+		kp = pid_kp_2;
+		ki = pid_ki_2;
+		kd = pid_kd_2;
 	}else{
-		pid_output_sum += pid_ki_3 * error;
-		if(pid_on == PID_ON_M){
-			pid_output_sum -= pid_kp_3 * input_d;
-		}
-
-		if(pid_output_sum > 1000.0f){
-			pid_output_sum = 1000.0f;
-		}else if(pid_output_sum < -1000.0f){
-			pid_output_sum = -1000.0f;
-		}
-
-		if(pid_on == PID_ON_E){
-			output = pid_kp_3 * error;
-		}
-
-		output += pid_output_sum - pid_kd_3 * input_d;
-		if(output > 1000.0f){
-			output = 1000.0f;
-		}
-		else if(output < -1000.0f){
-			output = -1000.0f;
-		}
+		kp = pid_kp_3;
+		ki = pid_ki_3;
+		kd = pid_kd_3;
 	}
 
+	//Calculate output
+	pid_output_sum += ki * error;
+	if(pid_on == PID_ON_M){
+		pid_output_sum -= kp * input_d;
+	}
+
+	if(pid_output_sum > 1000.0f){
+		pid_output_sum = 1000.0f;
+	}else if(pid_output_sum < -1000.0f){
+		pid_output_sum = -1000.0f;
+	}
+
+	if(pid_on == PID_ON_E){
+		output = kp * error;
+	}
+
+	output += pid_output_sum - kd * input_d;
+	if(output > 1000.0f){
+		output = 1000.0f;
+	}
+	else if(output < -1000.0f){
+		output = -1000.0f;
+	}
+
+	//Store
 	pid_output = output;
 	pid_last_input = input;
 }

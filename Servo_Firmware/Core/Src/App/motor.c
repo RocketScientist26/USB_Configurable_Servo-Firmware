@@ -28,25 +28,25 @@ void Motor_Set(int16_t strength){//-1000 0 1000 Strength
 	}
 
 	if(strength == 0){
-		TIM2 -> CCR1 = 1000;
-		TIM2 -> CCR2 = 1000;
+		__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 1000);
+		__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, 1000);
 		motor_running = 0;
 		motor_systick = 0;
 	}else if(strength < 0){
-		TIM2 -> CCR1 = 1000;
-		TIM2 -> CCR2 = 1000 + (strength / (1000 / motor_max_power));
+		__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 1000);
+		__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, 1000 + (strength / (1000 / motor_max_power)));
 		motor_running = 1;
 	}else if(strength > 0){
-		TIM2 -> CCR1 = 1000 - (strength / (1000 / motor_max_power));
-		TIM2 -> CCR2 = 1000;
+		__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_1, 1000 - (strength / (1000 / motor_max_power)));
+		__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_2, 1000);
 		motor_running = 1;
 	}
 }
 int16_t Motor_Get(){
-	if(TIM2 -> CCR1 != 1000){
-		return (1000 - (int16_t)(TIM2 -> CCR1)) * (1000 / motor_max_power);
+	if(__HAL_TIM_GET_COMPARE(&htim2, TIM_CHANNEL_1) != 1000){
+		return (1000 - (int16_t)__HAL_TIM_GET_COMPARE(&htim2, TIM_CHANNEL_1)) * (1000 / motor_max_power);
 	}else if(TIM2 -> CCR2 != 1000){
-		return ((int16_t)(TIM2 -> CCR2) - 1000) * (1000 / motor_max_power);
+		return ((int16_t)__HAL_TIM_GET_COMPARE(&htim2, TIM_CHANNEL_2) - 1000) * (1000 / motor_max_power);
 	}
 	return 0;
 } 
