@@ -21,9 +21,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, DATA
   8 .data         00000180  20000000  0800c8f4  00020000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  9 .bss          000014f4  20000180  0800ca74  00020180  2**3
+  9 .bss          00001524  20000180  0800ca74  00020180  2**3
                   ALLOC
- 10 ._user_heap_stack 00000604  20001674  0800ca74  00021674  2**0
+ 10 ._user_heap_stack 00000604  200016a4  0800ca74  000216a4  2**0
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00020180  2**0
                   CONTENTS, READONLY
@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  0001d44d  00000000  00000000  00040308  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0001d299  00000000  00000000  0005d755  2**0
+ 17 .debug_line   0001d3dd  00000000  00000000  0005d755  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00093ef2  00000000  00000000  0007a9ee  2**0
+ 18 .debug_str    00093efe  00000000  00000000  0007ab32  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  0010e8e0  2**0
+ 19 .comment      00000050  00000000  00000000  0010ea30  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00005704  00000000  00000000  0010e930  2**2
+ 20 .debug_frame  00005704  00000000  00000000  0010ea80  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -2698,7 +2698,7 @@ void PID_Compute(){
 	if(pid_on == PID_ON_M){
  8001886:	4b41      	ldr	r3, [pc, #260]	; (800198c <PID_Compute+0x1e0>)
  8001888:	781b      	ldrb	r3, [r3, #0]
- 800188a:	2b00      	cmp	r3, #0
+ 800188a:	2b01      	cmp	r3, #1
  800188c:	d10e      	bne.n	80018ac <PID_Compute+0x100>
 		pid_output_sum -= kp * input_d;
  800188e:	4b3e      	ldr	r3, [pc, #248]	; (8001988 <PID_Compute+0x1dc>)
@@ -2748,7 +2748,7 @@ void PID_Compute(){
 	if(pid_on == PID_ON_E){
  80018de:	4b2b      	ldr	r3, [pc, #172]	; (800198c <PID_Compute+0x1e0>)
  80018e0:	781b      	ldrb	r3, [r3, #0]
- 80018e2:	2b01      	cmp	r3, #1
+ 80018e2:	2b00      	cmp	r3, #0
  80018e4:	d105      	bne.n	80018f2 <PID_Compute+0x146>
 		output = kp * error;
  80018e6:	68b9      	ldr	r1, [r7, #8]
@@ -2845,7 +2845,7 @@ void PID_Start(){
  80019a8:	4b0a      	ldr	r3, [pc, #40]	; (80019d4 <PID_Start+0x38>)
  80019aa:	f04f 0200 	mov.w	r2, #0
  80019ae:	601a      	str	r2, [r3, #0]
-    PID_Set_Sampling_Time(pid_sampling_time);
+	PID_Set_Sampling_Time(pid_sampling_time);
  80019b0:	4b09      	ldr	r3, [pc, #36]	; (80019d8 <PID_Start+0x3c>)
  80019b2:	781b      	ldrb	r3, [r3, #0]
  80019b4:	b29b      	uxth	r3, r3
@@ -3317,15 +3317,15 @@ void Settings_Read(){
 		if((pid_on != PID_ON_M) && (pid_on != PID_ON_E)){
  8001d00:	4b20      	ldr	r3, [pc, #128]	; (8001d84 <Settings_Read+0x2dc>)
  8001d02:	781b      	ldrb	r3, [r3, #0]
- 8001d04:	2b00      	cmp	r3, #0
+ 8001d04:	2b01      	cmp	r3, #1
  8001d06:	d006      	beq.n	8001d16 <Settings_Read+0x26e>
  8001d08:	4b1e      	ldr	r3, [pc, #120]	; (8001d84 <Settings_Read+0x2dc>)
  8001d0a:	781b      	ldrb	r3, [r3, #0]
- 8001d0c:	2b01      	cmp	r3, #1
+ 8001d0c:	2b00      	cmp	r3, #0
  8001d0e:	d002      	beq.n	8001d16 <Settings_Read+0x26e>
 			pid_on = SETTINGS_DEF_PID_ON_DEF;
  8001d10:	4b1c      	ldr	r3, [pc, #112]	; (8001d84 <Settings_Read+0x2dc>)
- 8001d12:	2201      	movs	r2, #1
+ 8001d12:	2200      	movs	r2, #0
  8001d14:	701a      	strb	r2, [r3, #0]
 		}
 		if((pid_kp_1 < SETTINGS_DEF_PID_KP_MIN)||(pid_kp_1 > SETTINGS_DEF_PID_KP_MAX)){
@@ -3668,7 +3668,7 @@ void Settings_Read(){
  800200a:	701a      	strb	r2, [r3, #0]
 		pid_on = SETTINGS_DEF_PID_ON_DEF;
  800200c:	4b31      	ldr	r3, [pc, #196]	; (80020d4 <Settings_Read+0x62c>)
- 800200e:	2201      	movs	r2, #1
+ 800200e:	2200      	movs	r2, #0
  8002010:	701a      	strb	r2, [r3, #0]
 		pid_kp_1 = SETTINGS_DEF_PID_KP_DEF;
  8002012:	4b18      	ldr	r3, [pc, #96]	; (8002074 <Settings_Read+0x5cc>)
@@ -6584,7 +6584,7 @@ void USB_LP_CAN1_RX0_IRQHandler(void)
  80032fe:	bf00      	nop
  8003300:	bd80      	pop	{r7, pc}
  8003302:	bf00      	nop
- 8003304:	20001168 	.word	0x20001168
+ 8003304:	20001198 	.word	0x20001198
 
 08003308 <TIM3_IRQHandler>:
 
@@ -6737,7 +6737,7 @@ LoopFillZerobss:
   ldr r2, =_sbss
  800337c:	20000180 	.word	0x20000180
   ldr r4, =_ebss
- 8003380:	20001674 	.word	0x20001674
+ 8003380:	200016a4 	.word	0x200016a4
 
 08003384 <CAN1_RX1_IRQHandler>:
  * @retval : None
@@ -28427,7 +28427,7 @@ static int8_t CDC_Init_FS(void)
 }
  800bf18:	4618      	mov	r0, r3
  800bf1a:	bd80      	pop	{r7, pc}
- 800bf1c:	20000b80 	.word	0x20000b80
+ 800bf1c:	20000b98 	.word	0x20000b98
  800bf20:	200004d4 	.word	0x200004d4
  800bf24:	20000798 	.word	0x20000798
 
@@ -28717,7 +28717,7 @@ uint8_t * USBD_FS_ProductStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length
  800c0ea:	46bd      	mov	sp, r7
  800c0ec:	bd80      	pop	{r7, pc}
  800c0ee:	bf00      	nop
- 800c0f0:	20000f68 	.word	0x20000f68
+ 800c0f0:	20000f98 	.word	0x20000f98
  800c0f4:	0800c890 	.word	0x0800c890
 
 0800c0f8 <USBD_FS_ManufacturerStrDescriptor>:
@@ -28746,7 +28746,7 @@ uint8_t * USBD_FS_ManufacturerStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *l
  800c112:	3708      	adds	r7, #8
  800c114:	46bd      	mov	sp, r7
  800c116:	bd80      	pop	{r7, pc}
- 800c118:	20000f68 	.word	0x20000f68
+ 800c118:	20000f98 	.word	0x20000f98
  800c11c:	0800c8a4 	.word	0x0800c8a4
 
 0800c120 <USBD_FS_SerialStrDescriptor>:
@@ -28825,7 +28825,7 @@ uint8_t * USBD_FS_ConfigStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *length)
  800c172:	46bd      	mov	sp, r7
  800c174:	bd80      	pop	{r7, pc}
  800c176:	bf00      	nop
- 800c178:	20000f68 	.word	0x20000f68
+ 800c178:	20000f98 	.word	0x20000f98
  800c17c:	0800c8b8 	.word	0x0800c8b8
 
 0800c180 <USBD_FS_InterfaceStrDescriptor>:
@@ -28869,7 +28869,7 @@ uint8_t * USBD_FS_InterfaceStrDescriptor(USBD_SpeedTypeDef speed, uint16_t *leng
  800c1ae:	46bd      	mov	sp, r7
  800c1b0:	bd80      	pop	{r7, pc}
  800c1b2:	bf00      	nop
- 800c1b4:	20000f68 	.word	0x20000f68
+ 800c1b4:	20000f98 	.word	0x20000f98
  800c1b8:	0800c8c4 	.word	0x0800c8c4
 
 0800c1bc <Get_SerialNum>:
@@ -28882,7 +28882,9 @@ static void Get_SerialNum(void)
  800c1bc:	b580      	push	{r7, lr}
  800c1be:	b084      	sub	sp, #16
  800c1c0:	af00      	add	r7, sp, #0
-  uint32_t deviceserial0, deviceserial1, deviceserial2;
+  uint32_t deviceserial0;
+  uint32_t deviceserial1;
+  uint32_t deviceserial2;
 
   deviceserial0 = *(uint32_t *) DEVICE_ID1;
  800c1c2:	4b0f      	ldr	r3, [pc, #60]	; (800c200 <Get_SerialNum+0x44>)
@@ -29409,7 +29411,7 @@ USBD_StatusTypeDef USBD_LL_Init(USBD_HandleTypeDef *pdev)
  800c4ba:	46bd      	mov	sp, r7
  800c4bc:	bd80      	pop	{r7, pc}
  800c4be:	bf00      	nop
- 800c4c0:	20001168 	.word	0x20001168
+ 800c4c0:	20001198 	.word	0x20001198
  800c4c4:	40005c00 	.word	0x40005c00
 
 0800c4c8 <USBD_LL_Start>:
@@ -29888,7 +29890,7 @@ void *USBD_static_malloc(uint32_t size)
  800c75a:	46bd      	mov	sp, r7
  800c75c:	bc80      	pop	{r7}
  800c75e:	4770      	bx	lr
- 800c760:	20001454 	.word	0x20001454
+ 800c760:	20001484 	.word	0x20001484
 
 0800c764 <USBD_static_free>:
   * @brief  Dummy memory free

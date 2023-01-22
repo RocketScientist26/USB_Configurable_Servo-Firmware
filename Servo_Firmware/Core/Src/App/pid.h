@@ -1,5 +1,5 @@
-#define PID_ON_M 0//Proportional on measurement
-#define PID_ON_E 1//Proportional on error
+#define PID_ON_E 0//Proportional on measurement
+#define PID_ON_M 1//Proportional on error
 
 void PID_SysTick_Interrupt();
 void PID_Timer_Stop();

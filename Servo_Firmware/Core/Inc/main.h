@@ -71,6 +71,7 @@ void Error_Handler(void);
 #define SIGNAL_Pin GPIO_PIN_1
 #define SIGNAL_GPIO_Port GPIOB
 #define SIGNAL_EXTI_IRQn EXTI1_IRQn
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
