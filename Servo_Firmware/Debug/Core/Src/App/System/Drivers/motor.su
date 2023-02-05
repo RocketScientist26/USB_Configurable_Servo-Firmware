@@ -1,0 +1,4 @@
+../Core/Src/App/System/Drivers/motor.c:17:6:Motor_SysTick_Interrupt	8	static
+../Core/Src/App/System/Drivers/motor.c:30:6:Motor_Set	16	static
+../Core/Src/App/System/Drivers/motor.c:52:9:Motor_Get	4	static
+../Core/Src/App/System/Drivers/motor.c:62:6:Motor_Init	8	static

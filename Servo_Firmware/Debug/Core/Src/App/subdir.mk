@@ -6,42 +6,18 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/App/app.c \
-../Core/Src/App/flash.c \
-../Core/Src/App/general.c \
-../Core/Src/App/interrupts.c \
-../Core/Src/App/led.c \
-../Core/Src/App/motor.c \
-../Core/Src/App/pid.c \
-../Core/Src/App/potentiometer.c \
-../Core/Src/App/settings.c \
-../Core/Src/App/signal.c \
-../Core/Src/App/usb.c 
+../Core/Src/App/callbacks.c \
+../Core/Src/App/settings.c 
 
 OBJS += \
 ./Core/Src/App/app.o \
-./Core/Src/App/flash.o \
-./Core/Src/App/general.o \
-./Core/Src/App/interrupts.o \
-./Core/Src/App/led.o \
-./Core/Src/App/motor.o \
-./Core/Src/App/pid.o \
-./Core/Src/App/potentiometer.o \
-./Core/Src/App/settings.o \
-./Core/Src/App/signal.o \
-./Core/Src/App/usb.o 
+./Core/Src/App/callbacks.o \
+./Core/Src/App/settings.o 
 
 C_DEPS += \
 ./Core/Src/App/app.d \
-./Core/Src/App/flash.d \
-./Core/Src/App/general.d \
-./Core/Src/App/interrupts.d \
-./Core/Src/App/led.d \
-./Core/Src/App/motor.d \
-./Core/Src/App/pid.d \
-./Core/Src/App/potentiometer.d \
-./Core/Src/App/settings.d \
-./Core/Src/App/signal.d \
-./Core/Src/App/usb.d 
+./Core/Src/App/callbacks.d \
+./Core/Src/App/settings.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -51,7 +27,7 @@ Core/Src/App/%.o Core/Src/App/%.su: ../Core/Src/App/%.c Core/Src/App/subdir.mk
 clean: clean-Core-2f-Src-2f-App
 
 clean-Core-2f-Src-2f-App:
-	-$(RM) ./Core/Src/App/app.d ./Core/Src/App/app.o ./Core/Src/App/app.su ./Core/Src/App/flash.d ./Core/Src/App/flash.o ./Core/Src/App/flash.su ./Core/Src/App/general.d ./Core/Src/App/general.o ./Core/Src/App/general.su ./Core/Src/App/interrupts.d ./Core/Src/App/interrupts.o ./Core/Src/App/interrupts.su ./Core/Src/App/led.d ./Core/Src/App/led.o ./Core/Src/App/led.su ./Core/Src/App/motor.d ./Core/Src/App/motor.o ./Core/Src/App/motor.su ./Core/Src/App/pid.d ./Core/Src/App/pid.o ./Core/Src/App/pid.su ./Core/Src/App/potentiometer.d ./Core/Src/App/potentiometer.o ./Core/Src/App/potentiometer.su ./Core/Src/App/settings.d ./Core/Src/App/settings.o ./Core/Src/App/settings.su ./Core/Src/App/signal.d ./Core/Src/App/signal.o ./Core/Src/App/signal.su ./Core/Src/App/usb.d ./Core/Src/App/usb.o ./Core/Src/App/usb.su
+	-$(RM) ./Core/Src/App/app.d ./Core/Src/App/app.o ./Core/Src/App/app.su ./Core/Src/App/callbacks.d ./Core/Src/App/callbacks.o ./Core/Src/App/callbacks.su ./Core/Src/App/settings.d ./Core/Src/App/settings.o ./Core/Src/App/settings.su
 
 .PHONY: clean-Core-2f-Src-2f-App
 

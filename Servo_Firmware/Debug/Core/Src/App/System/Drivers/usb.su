@@ -1,0 +1,5 @@
+../Core/Src/App/System/Drivers/usb.c:19:13:_memcpy	32	static
+../Core/Src/App/System/Drivers/usb.c:28:6:USB_Packet_Received	32	static
+../Core/Src/App/System/Drivers/usb.c:194:6:USB_Send_Status	24	static
+../Core/Src/App/System/Drivers/usb.c:237:6:USB_Send_Config	24	static
+../Core/Src/App/System/Drivers/usb.c:316:6:USB_Det	4	static

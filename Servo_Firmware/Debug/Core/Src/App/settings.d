@@ -29,9 +29,12 @@ Core/Src/App/settings.o: ../Core/Src/App/settings.c ../Core/Inc/main.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h \
  ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h \
- ../Core/Src/App/general.h ../Core/Src/App/settings.h \
- ../Core/Src/App/led.h ../Core/Src/App/pid.h ../Core/Src/App/motor.h \
- ../Core/Src/App/flash.h
+ ../Core/Src/App/System/Drivers/flash.h \
+ ../Core/Src/App/System/Drivers/led.h \
+ ../Core/Src/App/System/Drivers/pid.h \
+ ../Core/Src/App/System/Drivers/motor.h \
+ ../Core/Src/App/System/Drivers/signal.h \
+ ../Core/Src/App/System/Drivers/usb.h ../Core/Src/App/settings.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 ../Core/Inc/stm32f1xx_hal_conf.h:
@@ -63,9 +66,10 @@ Core/Src/App/settings.o: ../Core/Src/App/settings.c ../Core/Inc/main.h \
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h:
 ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h:
-../Core/Src/App/general.h:
+../Core/Src/App/System/Drivers/flash.h:
+../Core/Src/App/System/Drivers/led.h:
+../Core/Src/App/System/Drivers/pid.h:
+../Core/Src/App/System/Drivers/motor.h:
+../Core/Src/App/System/Drivers/signal.h:
+../Core/Src/App/System/Drivers/usb.h:
 ../Core/Src/App/settings.h:
-../Core/Src/App/led.h:
-../Core/Src/App/pid.h:
-../Core/Src/App/motor.h:
-../Core/Src/App/flash.h:

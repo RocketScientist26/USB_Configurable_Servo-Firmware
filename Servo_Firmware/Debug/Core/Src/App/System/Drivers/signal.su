@@ -1,0 +1,7 @@
+../Core/Src/App/System/Drivers/signal.c:15:13:Signal_Timer_Stop	8	static
+../Core/Src/App/System/Drivers/signal.c:18:13:Signal_Timer_Restart	8	static
+../Core/Src/App/System/Drivers/signal.c:23:17:Signal_Read_Timer	4	static
+../Core/Src/App/System/Drivers/signal.c:26:16:Signal_Read_Pin	16	static
+../Core/Src/App/System/Drivers/signal.c:53:6:Signal_SysTick_Interrupt	8	static
+../Core/Src/App/System/Drivers/signal.c:63:6:Signal_Timer_Interrupt	4	static
+../Core/Src/App/System/Drivers/signal.c:67:6:Signal_Pin_Interrupt	16	static

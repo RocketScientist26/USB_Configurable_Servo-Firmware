@@ -23,7 +23,7 @@
 #include "stm32f1xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "App/interrupts.h"
+#include "App/System/interrupts.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

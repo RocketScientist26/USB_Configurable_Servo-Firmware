@@ -1,4 +1,2 @@
-../Core/Src/App/app.c:29:6:Potentiometer_Ready	8	static
-../Core/Src/App/app.c:41:6:PID_Ready	16	static
-../Core/Src/App/app.c:45:6:App_Init	8	static
-../Core/Src/App/app.c:52:6:App_Loop	8	static
+../Core/Src/App/app.c:11:6:App_Init	8	static
+../Core/Src/App/app.c:22:6:App_Loop	32	static

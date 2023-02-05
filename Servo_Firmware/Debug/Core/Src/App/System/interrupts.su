@@ -1,0 +1,4 @@
+../Core/Src/App/System/interrupts.c:10:6:HAL_ADC_ConvCpltCallback	16	static
+../Core/Src/App/System/interrupts.c:17:6:HAL_TIM_PeriodElapsedCallback	16	static
+../Core/Src/App/System/interrupts.c:27:6:HAL_GPIO_EXTI_Callback	16	static
+../Core/Src/App/System/interrupts.c:34:6:Interrupts_SysTick	8	static

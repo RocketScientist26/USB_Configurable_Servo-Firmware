@@ -1,2 +1,4 @@
-../Core/Src/App/settings.c:36:6:Settings_Read	16	static
-../Core/Src/App/settings.c:165:6:Settings_Write	16	static
+../Core/Src/App/settings.c:93:13:_memcpy	32	static
+../Core/Src/App/settings.c:102:6:Settings_Read	24	static
+../Core/Src/App/settings.c:157:6:Settings_Apply	8	static
+../Core/Src/App/settings.c:178:6:Settings_Write	16	static
