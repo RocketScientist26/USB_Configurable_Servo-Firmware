@@ -1,8 +1,6 @@
-Image "Servo Firmware - SWV statistical profiling - no USB.png" shows 
-profiling results while PID is running but without USB app polling status 
-continuously. Image "Servo Firmware - SWV statistical profiling - with  
-USB.png" shows same but with app polling status continuously (PID also 
-running).
+Image "no USB.png" shows profiling results while PID is running but without
+USB app polling status continuously. Image "with USB.png" shows same while
+app is polling continuously status (PID is also running).
 
 As you can see most of the time MCU runs functions in "App_Loop()" (like 
 "LED_Update()", "USB_Det()", etc..), which can be interrupted even much more 
