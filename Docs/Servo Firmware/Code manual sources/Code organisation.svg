@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="297mm"
-   height="210mm"
-   viewBox="0 0 297 210"
+   width="800"
+   height="480"
+   viewBox="0 0 211.66667 127"
    version="1.1"
    id="svg56206"
    inkscape:version="1.1.2 (b8e25be833, 2022-02-05)"
-   sodipodi:docname="Servo FIrmware - Code organisation.svg"
+   sodipodi:docname="Code organisation.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -21,21 +21,69 @@
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      inkscape:pagecheckerboard="0"
-     inkscape:document-units="mm"
+     inkscape:document-units="px"
      showgrid="false"
-     inkscape:zoom="0.57200397"
-     inkscape:cx="562.05904"
-     inkscape:cy="396.85039"
+     inkscape:zoom="0.66880516"
+     inkscape:cx="399.96701"
+     inkscape:cy="240.72781"
      inkscape:window-width="1366"
      inkscape:window-height="705"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     units="px"
+     width="800px"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true" />
   <defs
      id="defs56203" />
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1" />
+     id="layer1">
+    <path
+       id="rect843"
+       style="fill:#1a1a1a;stroke-width:3.04807;stroke-linecap:round;stroke-linejoin:round"
+       d="M 0,0 H 211.66667 V 127 H 0 Z" />
+    <path
+       id="path1097"
+       style="fill:#ff6600;stroke-width:0.491881;stroke-linecap:round;stroke-linejoin:round"
+       d="M 28.205309,20.700441 H 54.663643 V 47.158775 H 28.205309 Z" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:4.96411px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.124103"
+       x="41.443161"
+       y="31.358273"
+       id="text1609"><tspan
+         sodipodi:role="line"
+         id="tspan1607"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.124103"
+         x="41.443161"
+         y="31.358273">app.c</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.124103"
+         x="41.443161"
+         y="38.114281"
+         id="tspan2057">app.h</tspan></text>
+    <path
+       id="path3830"
+       style="fill:none;stroke:#ff6600;stroke-width:0.491881;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+       d="M 17.343612,83.64097 H 123.17695 v 37.04166 H 17.343612 Z"
+       sodipodi:nodetypes="ccccc" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:4.96411px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:start;text-anchor:start;fill:#ffffff;stroke-width:0.124103"
+       x="20.462362"
+       y="90.114639"
+       id="text5923"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:start;text-anchor:start;fill:#ffffff;stroke-width:0.124103"
+         x="20.462362"
+         y="90.114639"
+         id="tspan5921">Drivers</tspan></text>
+  </g>
 </svg>
