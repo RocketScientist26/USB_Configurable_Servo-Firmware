@@ -1,2 +1,2 @@
-../Core/Src/App/app.c:11:6:App_Init	8	static
-../Core/Src/App/app.c:22:6:App_Loop	32	static
+../Core/Src/App/app.c:13:6:App_Init	8	static
+../Core/Src/App/app.c:26:6:App_Loop	32	static

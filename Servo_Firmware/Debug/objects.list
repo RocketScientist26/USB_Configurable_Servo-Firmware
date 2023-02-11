@@ -1,3 +1,4 @@
+"./Core/Src/App/System/Drivers/crc32.o"
 "./Core/Src/App/System/Drivers/flash.o"
 "./Core/Src/App/System/Drivers/led.o"
 "./Core/Src/App/System/Drivers/motor.o"

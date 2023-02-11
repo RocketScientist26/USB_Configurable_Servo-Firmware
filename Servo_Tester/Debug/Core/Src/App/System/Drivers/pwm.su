@@ -1,0 +1,2 @@
+../Core/Src/App/System/Drivers/pwm.c:7:6:Pwm_Set_Ms	16	static
+../Core/Src/App/System/Drivers/pwm.c:12:6:Pwm_Init	8	static

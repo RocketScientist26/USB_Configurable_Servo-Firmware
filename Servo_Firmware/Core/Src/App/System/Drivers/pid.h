@@ -41,7 +41,7 @@ void PID_Stop();
 //Function should be implemented externally
 void PID_Ready(float output); //called every time PID computation is complete
 
-//Control/status variables
+//Configuration variables
 extern pid_ctr_t pid_ctr;
 //Input data
 extern pid_i_t pid_i;

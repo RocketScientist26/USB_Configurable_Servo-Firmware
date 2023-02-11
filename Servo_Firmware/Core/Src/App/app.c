@@ -1,4 +1,5 @@
-#include "main.h"
+#include <stdint.h>
+#include <stdbool.h>
 #include "System/Drivers/led.h"
 #include "System/Drivers/motor.h"
 #include "System/Drivers/pid.h"
@@ -8,6 +9,7 @@
 #include "app.h"
 #include "settings.h"
 
+//Runs once at start
 void App_Init(){
 	//Read configuration from flash into "settings_data" global struct
 	Settings_Read();
@@ -19,6 +21,8 @@ void App_Init(){
 	//Start potentiometer measurements
 	Potentiometer_Init();
 }
+
+//Runs forever in cycle
 void App_Loop(){
 	//Reply and handle USB requests
 	switch(usb_o.usb_rq){

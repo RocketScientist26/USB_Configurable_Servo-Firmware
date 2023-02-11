@@ -1,31 +1,18 @@
-#include "main.h"
+#include <stdbool.h>
+#include <stdint.h>
 #include "app.h"
-#include "lock.h"
-#include "potentiometer.h"
-#include "pwm.h"
-#include "led.h"
+#include "System/Drivers/lock.h"
+#include "System/Drivers/potentiometer.h"
+#include "System/Drivers/pwm.h"
 
-void Potentiometer_Ready(float position){
-	if(Lock_State() == LOCK_DISABLED){
-		Pwm_Set_Ms(1.0f + ((1.0f / 4095.0f) * position));
-	}
-}
-void Lock_Updated(uint8_t state){
-	if(state == LOCK_ENABLED){
-		Led_Set(LED_ON);
-	}else{
-		Led_Set(LED_OFF);
-	}
-}
-
+//Runs only once at start
 void App_Init(){
-	Lock_Init();
+	//Detect lock switch state and turn on LED if enabled
+	Lock_Interrupt();
+
+	//Start potentiometer measurements (also waits until first position measurement completes)
 	Potentiometer_Init();
+
+	//Start PWM output
 	Pwm_Init();
-	
-	if(Lock_State() == LOCK_ENABLED){
-		Led_Set(LED_ON);
-	}else{
-		Led_Set(LED_OFF);
-	}
 }

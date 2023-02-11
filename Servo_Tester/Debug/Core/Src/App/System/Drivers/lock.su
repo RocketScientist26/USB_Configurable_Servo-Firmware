@@ -1,0 +1,2 @@
+../Core/Src/App/System/Drivers/lock.c:5:16:Lock_Read	16	static
+../Core/Src/App/System/Drivers/lock.c:37:6:Lock_Interrupt	16	static

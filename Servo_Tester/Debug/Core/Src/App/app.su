@@ -1,3 +1,1 @@
-../Core/Src/App/app.c:8:6:Potentiometer_Ready	16	static
-../Core/Src/App/app.c:13:6:Lock_Updated	16	static
-../Core/Src/App/app.c:21:6:App_Init	8	static
+../Core/Src/App/app.c:9:6:App_Init	8	static

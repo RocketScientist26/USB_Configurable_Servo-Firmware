@@ -5,6 +5,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
+../Core/Src/App/System/Drivers/crc32.c \
 ../Core/Src/App/System/Drivers/flash.c \
 ../Core/Src/App/System/Drivers/led.c \
 ../Core/Src/App/System/Drivers/motor.c \
@@ -14,6 +15,7 @@ C_SRCS += \
 ../Core/Src/App/System/Drivers/usb.c 
 
 OBJS += \
+./Core/Src/App/System/Drivers/crc32.o \
 ./Core/Src/App/System/Drivers/flash.o \
 ./Core/Src/App/System/Drivers/led.o \
 ./Core/Src/App/System/Drivers/motor.o \
@@ -23,6 +25,7 @@ OBJS += \
 ./Core/Src/App/System/Drivers/usb.o 
 
 C_DEPS += \
+./Core/Src/App/System/Drivers/crc32.d \
 ./Core/Src/App/System/Drivers/flash.d \
 ./Core/Src/App/System/Drivers/led.d \
 ./Core/Src/App/System/Drivers/motor.d \
@@ -39,7 +42,7 @@ Core/Src/App/System/Drivers/%.o Core/Src/App/System/Drivers/%.su: ../Core/Src/Ap
 clean: clean-Core-2f-Src-2f-App-2f-System-2f-Drivers
 
 clean-Core-2f-Src-2f-App-2f-System-2f-Drivers:
-	-$(RM) ./Core/Src/App/System/Drivers/flash.d ./Core/Src/App/System/Drivers/flash.o ./Core/Src/App/System/Drivers/flash.su ./Core/Src/App/System/Drivers/led.d ./Core/Src/App/System/Drivers/led.o ./Core/Src/App/System/Drivers/led.su ./Core/Src/App/System/Drivers/motor.d ./Core/Src/App/System/Drivers/motor.o ./Core/Src/App/System/Drivers/motor.su ./Core/Src/App/System/Drivers/pid.d ./Core/Src/App/System/Drivers/pid.o ./Core/Src/App/System/Drivers/pid.su ./Core/Src/App/System/Drivers/potentiometer.d ./Core/Src/App/System/Drivers/potentiometer.o ./Core/Src/App/System/Drivers/potentiometer.su ./Core/Src/App/System/Drivers/signal.d ./Core/Src/App/System/Drivers/signal.o ./Core/Src/App/System/Drivers/signal.su ./Core/Src/App/System/Drivers/usb.d ./Core/Src/App/System/Drivers/usb.o ./Core/Src/App/System/Drivers/usb.su
+	-$(RM) ./Core/Src/App/System/Drivers/crc32.d ./Core/Src/App/System/Drivers/crc32.o ./Core/Src/App/System/Drivers/crc32.su ./Core/Src/App/System/Drivers/flash.d ./Core/Src/App/System/Drivers/flash.o ./Core/Src/App/System/Drivers/flash.su ./Core/Src/App/System/Drivers/led.d ./Core/Src/App/System/Drivers/led.o ./Core/Src/App/System/Drivers/led.su ./Core/Src/App/System/Drivers/motor.d ./Core/Src/App/System/Drivers/motor.o ./Core/Src/App/System/Drivers/motor.su ./Core/Src/App/System/Drivers/pid.d ./Core/Src/App/System/Drivers/pid.o ./Core/Src/App/System/Drivers/pid.su ./Core/Src/App/System/Drivers/potentiometer.d ./Core/Src/App/System/Drivers/potentiometer.o ./Core/Src/App/System/Drivers/potentiometer.su ./Core/Src/App/System/Drivers/signal.d ./Core/Src/App/System/Drivers/signal.o ./Core/Src/App/System/Drivers/signal.su ./Core/Src/App/System/Drivers/usb.d ./Core/Src/App/System/Drivers/usb.o ./Core/Src/App/System/Drivers/usb.su
 
 .PHONY: clean-Core-2f-Src-2f-App-2f-System-2f-Drivers
 

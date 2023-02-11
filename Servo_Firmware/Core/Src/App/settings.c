@@ -1,4 +1,6 @@
-#include "main.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include "System/Drivers/crc32.h"
 #include "System/Drivers/flash.h"
 #include "System/Drivers/led.h"
 #include "System/Drivers/pid.h"
@@ -6,8 +8,6 @@
 #include "System/Drivers/signal.h"
 #include "System/Drivers/usb.h"
 #include "settings.h"
-
-extern CRC_HandleTypeDef hcrc;
 
 //Global configuration variable
 usb_config_t settings_data;
@@ -110,7 +110,7 @@ void Settings_Read(){
 	Flash_Read(&settings_data_buff[0], SETTINGS_FLASH_ADDRESS, sizeof(usb_config_t) + i + sizeof(uint32_t));
 
 	//Get CRCs
-	uint32_t actual_crc = HAL_CRC_Calculate(&hcrc, (uint32_t *)&settings_data_buff[0], (sizeof(usb_config_t) + i) / sizeof(uint32_t));
+	uint32_t actual_crc = CRC32_Get((uint32_t *)&settings_data_buff[0], (sizeof(usb_config_t) + i) / sizeof(uint32_t));
 	uint32_t stored_crc = 0;
 	_memcpy((uint32_t)&stored_crc, (uint32_t)&settings_data_buff[sizeof(usb_config_t) + i], sizeof(uint32_t));
 
@@ -186,7 +186,7 @@ void Settings_Write(){
 	}
 
 	//Append CRC
-	uint32_t crc = HAL_CRC_Calculate(&hcrc, (uint32_t *)&settings_data_buff[0], (sizeof(usb_config_t) + i) / sizeof(uint32_t));
+	uint32_t crc = CRC32_Get((uint32_t *)&settings_data_buff[0], (sizeof(usb_config_t) + i) / sizeof(uint32_t));
 	_memcpy((uint32_t)&settings_data_buff[sizeof(usb_config_t) + i], (uint32_t)&crc, sizeof(uint32_t));
 	
 	//Write to flash

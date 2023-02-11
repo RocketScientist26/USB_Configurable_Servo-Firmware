@@ -1,2 +1,0 @@
-../Core/Src/App/potentiometer.c:14:6:Potentiometer_ADC_Interrupt	8	static
-../Core/Src/App/potentiometer.c:26:6:Potentiometer_Init	8	static

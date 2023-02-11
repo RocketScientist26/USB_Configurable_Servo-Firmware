@@ -176,4 +176,5 @@
 			<resource resourceType="PROJECT" workspacePath="/Servo_Tester"/>
 		</configuration>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.make.core.buildtargets"/>
 </cproject>

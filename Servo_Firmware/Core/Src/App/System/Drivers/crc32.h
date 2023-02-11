@@ -1,0 +1,1 @@
+uint32_t CRC32_Get(uint32_t *data, uint32_t length_words);

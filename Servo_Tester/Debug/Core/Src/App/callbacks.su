@@ -1,0 +1,2 @@
+../Core/Src/App/callbacks.c:12:6:Potentiometer_Ready	16	static
+../Core/Src/App/callbacks.c:19:6:Lock_Updated	16	static

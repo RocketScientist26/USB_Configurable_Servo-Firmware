@@ -1,5 +1,6 @@
+#include <stdint.h>
+#include <stdbool.h>
 #include <math.h>
-#include "main.h"
 #include "System/Drivers/led.h"
 #include "System/Drivers/motor.h"
 #include "System/Drivers/pid.h"

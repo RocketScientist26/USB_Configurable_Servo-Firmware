@@ -1,4 +1,0 @@
-../Core/Src/App/lock.c:6:6:Lock_Interrupt	8	static
-../Core/Src/App/lock.c:10:9:Lock_State	4	static
-../Core/Src/App/lock.c:13:9:Lock_Read	16	static
-../Core/Src/App/lock.c:32:6:Lock_Init	8	static

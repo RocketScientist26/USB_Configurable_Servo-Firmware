@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="1160"
+   height="740"
+   viewBox="0 0 306.91667 195.79166"
+   version="1.1"
+   id="svg56206"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="Code organisation.svg"
+   inkscape:export-filename="Code organization.png"
+   inkscape:export-xdpi="148.96552"
+   inkscape:export-ydpi="148.96552"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview56208"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:zoom="1.0432432"
+     inkscape:cx="460.5829"
+     inkscape:cy="370"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     units="px"
+     width="800px"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-bbox-midpoints="true"
+     inkscape:showpageshadow="2"
+     inkscape:deskcolor="#d1d1d1"
+     showborder="true" />
+  <defs
+     id="defs56203" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="opacity:1;fill:#c9c9c9;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       id="rect3929"
+       width="306.91666"
+       height="195.79167"
+       x="0"
+       y="0"
+       ry="2.6458333"
+       rx="2.6458333" />
+    <path
+       id="rect9255"
+       style="opacity:1;fill:#a0672c;fill-opacity:1;stroke:none;stroke-width:1.09911;stroke-linecap:round;stroke-opacity:1"
+       d="m 150.05027,164.44939 3.1502,9.525 3.15019,-9.525 h 136.71879 c 1.52226,0 2.74763,-1.22537 2.74763,-2.74763 v -5.49579 c 0,-1.52228 -1.22537,-2.74764 -2.74763,-2.74764 H 13.330969 c -1.522271,0 -2.747636,1.22536 -2.747636,2.74764 v 5.49579 c 0,1.52226 1.225365,2.74763 2.747636,2.74763 z"
+       sodipodi:nodetypes="ccccsssssscc" />
+    <path
+       id="rect4464"
+       style="opacity:1;fill:#513737;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       d="m 269.35875,142.875 h 23.8125 c 1.46579,0 2.64583,-1.18004 2.64583,-2.64583 V 18.520833 c 0,-1.46579 -1.18004,-2.645833 -2.64583,-2.645833 H 13.229167 c -1.465791,0 -2.645834,1.180043 -2.645834,2.645833 V 140.22917 c 0,1.46579 1.180043,2.64583 2.645834,2.64583 H 248.70833 l 10.32547,31.22084 z"
+       sodipodi:nodetypes="cssssssssccc" />
+    <path
+       id="rect4139"
+       style="opacity:1;fill:#00b0d4;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       d="m 287.87958,132.29167 c 1.4658,0 2.64584,-1.18005 2.64584,-2.64584 V 55.562499 c 0,-1.465788 -1.18004,-2.645833 -2.64584,-2.645833 H 18.520833 c -1.465788,0 -2.645833,1.180045 -2.645833,2.645833 v 74.083331 c 0,1.46579 1.180045,2.64584 2.645833,2.64584 H 146.37504 l 6.82543,20.63749 6.8249,-20.63749 z"
+       sodipodi:nodetypes="cssssssccccc" />
+    <rect
+       style="opacity:1;fill:#800033;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       id="rect4587"
+       width="264.06711"
+       height="37.041691"
+       x="21.166668"
+       y="89.958336"
+       rx="2.6458333"
+       ry="2.6458333" />
+    <rect
+       style="opacity:1;fill:#89a02c;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       id="rect8942"
+       width="285.23383"
+       height="10.583432"
+       x="10.583333"
+       y="174.62498"
+       rx="2.6458333"
+       ry="2.6458333" />
+    <rect
+       style="opacity:1;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       id="rect10717"
+       width="30.627617"
+       height="15.875001"
+       x="15.875"
+       y="31.750002"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:4.96411px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:start;text-anchor:start;fill:#ffffff;stroke-width:0.124103"
+       x="20.852678"
+       y="62.049313"
+       id="text5923"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:start;text-anchor:start;fill:#ffffff;stroke-width:0.124103"
+         x="20.852678"
+         y="62.049313"
+         id="tspan5921">System</tspan></text>
+    <rect
+       style="opacity:1;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       id="rect10721"
+       width="30.627638"
+       height="15.875001"
+       x="52.445305"
+       y="31.750002"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <rect
+       style="opacity:1;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       id="rect10723"
+       width="30.627638"
+       height="15.875001"
+       x="89.015625"
+       y="31.750002"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.63228px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+       x="67.666527"
+       y="40.822006"
+       id="text430"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="67.666527"
+         y="40.822006"
+         id="tspan585">callbacks.c</tspan></text>
+    <rect
+       style="opacity:1;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       id="rect10725"
+       width="31.233799"
+       height="15.875001"
+       x="21.166666"
+       y="68.791672"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <rect
+       style="opacity:1;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       id="rect10727"
+       width="30.38176"
+       height="15.87501"
+       x="26.458332"
+       y="105.83334"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.63228px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+       x="31.39922"
+       y="38.17617"
+       id="text691"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="31.39922"
+         y="38.17617"
+         id="tspan689">app.c</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="31.39922"
+         y="43.119595"
+         id="tspan693">app.h</tspan></text>
+    <rect
+       style="opacity:1;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       id="rect10729"
+       width="30.38176"
+       height="15.87501"
+       x="63.641991"
+       y="105.83334"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <rect
+       style="opacity:1;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       id="rect10731"
+       width="30.381771"
+       height="15.87501"
+       x="100.82565"
+       y="105.83334"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.63228px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+       x="103.93368"
+       y="38.17617"
+       id="text720"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="103.93368"
+         y="38.17617"
+         id="tspan718">settings.c</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="103.93368"
+         y="43.119595"
+         id="tspan724">settings.h</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:4.96411px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:start;text-anchor:start;fill:#ffffff;stroke-width:0.124103"
+       x="15.561012"
+       y="25.007641"
+       id="text1222"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:start;text-anchor:start;fill:#ffffff;stroke-width:0.124103"
+         x="15.561012"
+         y="25.007641"
+         id="tspan1220">App</tspan></text>
+    <rect
+       style="opacity:1;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       id="rect10733"
+       width="30.381779"
+       height="15.87501"
+       x="138.00932"
+       y="105.83334"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <rect
+       style="opacity:1;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       id="rect10735"
+       width="30.381779"
+       height="15.87501"
+       x="175.19301"
+       y="105.83334"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.63228px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+       x="36.690884"
+       y="75.217834"
+       id="text1276"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="36.690884"
+         y="75.217834"
+         id="tspan1272">interrupts.c</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="36.690884"
+         y="80.161263"
+         id="tspan1274">interrupts.h</tspan></text>
+    <rect
+       style="opacity:1;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       id="rect10737"
+       width="30.381779"
+       height="15.87501"
+       x="212.37668"
+       y="105.83334"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:4.96411px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:start;text-anchor:start;fill:#ffffff;stroke-width:0.124103"
+       x="26.144344"
+       y="99.090965"
+       id="text1306"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:start;text-anchor:start;fill:#ffffff;stroke-width:0.124103"
+         x="26.144344"
+         y="99.090965"
+         id="tspan1304">Drivers</tspan></text>
+    <rect
+       style="opacity:1;fill:#ff6600;fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linecap:round;stroke-opacity:1"
+       id="rect10739"
+       width="30.381779"
+       height="15.87501"
+       x="249.56036"
+       y="105.83334"
+       rx="1.3229166"
+       ry="1.3229166" />
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.63228px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+       x="41.98262"
+       y="112.25949"
+       id="text1316"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="41.98262"
+         y="112.25949"
+         id="tspan1312">flash.c</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="41.98262"
+         y="117.20292"
+         id="tspan1314">flash.h</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.63228px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+       x="79.0243"
+       y="112.25949"
+       id="text1390"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="79.0243"
+         y="112.25949"
+         id="tspan1386">led.c</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="79.0243"
+         y="117.20292"
+         id="tspan1388">led.h</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.63228px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+       x="116.0659"
+       y="112.25949"
+       id="text1398"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="116.0659"
+         y="112.25949"
+         id="tspan1394">motor.c</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="116.0659"
+         y="117.20292"
+         id="tspan1396">motor.h</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.63228px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+       x="153.10757"
+       y="112.25949"
+       id="text1406"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="153.10757"
+         y="112.25949"
+         id="tspan1402">pid.c</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="153.10757"
+         y="117.20292"
+         id="tspan1404">pid.h</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.63228px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+       x="190.14929"
+       y="112.25949"
+       id="text1414"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="190.14929"
+         y="112.25949"
+         id="tspan1410">potentiometer.c</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="190.14929"
+         y="117.20292"
+         id="tspan1412">potentiometer.h</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.63228px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+       x="227.19087"
+       y="112.25949"
+       id="text1422"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="227.19087"
+         y="112.25949"
+         id="tspan1418">signal.c</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="227.19087"
+         y="117.20292"
+         id="tspan1420">signal.h</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:3.63228px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+       x="264.23276"
+       y="112.25949"
+       id="text1430"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="264.23276"
+         y="112.25949"
+         id="tspan1426">usb.c</tspan><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:center;text-anchor:middle;fill:#ffffff;stroke-width:0.0908071"
+         x="264.23276"
+         y="117.20292"
+         id="tspan1428">usb.h</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:4.96411px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:start;text-anchor:start;fill:#ffffff;stroke-width:0.124103"
+       x="132.7357"
+       y="181.37614"
+       id="text2953"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:start;text-anchor:start;fill:#ffffff;stroke-width:0.124103"
+         x="132.7357"
+         y="181.37614"
+         id="tspan2951">C Standard library</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-weight:bold;font-size:4.96411px;line-height:1.25;font-family:'Microsoft JhengHei UI';-inkscape-font-specification:'Microsoft JhengHei UI Bold';text-align:start;text-anchor:start;fill:#ffffff;stroke-width:0.124103"
+       x="105.91211"
+       y="160.2243"
+       id="text9261"><tspan
+         sodipodi:role="line"
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:'Fira Sans';-inkscape-font-specification:'Fira Sans Bold Italic';text-align:start;text-anchor:start;fill:#ffffff;stroke-width:0.124103"
+         x="105.91211"
+         y="160.2243"
+         id="tspan9259">STM32CubeMX generated files / STM32 HAL</tspan></text>
+  </g>
+</svg>
