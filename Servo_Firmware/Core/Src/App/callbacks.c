@@ -31,20 +31,17 @@ void Potentiometer_Ready(){
 //Signal
 void Signal_Gone(){
 	if(!settings_data.signal_ignore || (settings_data.signal_ignore && (!usb_o.usb_present))){
-		if(pid_o.running){
-			PID_Stop();
-		}
-		pid_i.setpoint = 0;
+		PID_Stop();
 	}
 }
-void Signal_Received(float length_ms){
+void Signal_Received(){
 	if(!usb_o.usb_present || (!settings_data.signal_ignore && usb_o.usb_present)){
-		if((length_ms <= settings_data.signal_max) && (length_ms >= settings_data.signal_min)){
+		if((signal_o.length_ms <= settings_data.signal_max) && (signal_o.length_ms >= settings_data.signal_min)){
 			//Calculate new PID setpoint
 			float new_pid_setpoint =
 					(
 						((float)settings_data.potentiometer_max - (float)settings_data.potentiometer_min) * //Total enabled potentiometer scale
-						((length_ms - settings_data.signal_min) / (settings_data.signal_max - settings_data.signal_min)) //Received signal to total signal scale ratio
+						((signal_o.length_ms - settings_data.signal_min) / (settings_data.signal_max - settings_data.signal_min)) //Received signal to total signal scale ratio
 					) + (float)settings_data.potentiometer_min;
 
 			//Detect if position change is enough for LED to be fired, if it is in this mode
@@ -60,9 +57,9 @@ void Signal_Received(float length_ms){
 			}
 
 			pid_i.setpoint = new_pid_setpoint;
-			if(!pid_o.running){
-				PID_Start();
-			}
+			PID_Start();
+		}else{
+			PID_Stop();
 		}
 	}
 }

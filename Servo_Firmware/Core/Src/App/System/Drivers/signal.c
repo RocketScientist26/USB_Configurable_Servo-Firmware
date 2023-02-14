@@ -5,11 +5,12 @@ extern TIM_HandleTypeDef htim4;
 
 //Control/status variables
 signal_ctr_t signal_ctr;
+//Output variables
+signal_o_t signal_o;
 
 //Working variables
 static uint32_t timeout_passed_ms = 0; //Counter for measuring time since getting first edge of signal
 static bool signal_reading;
-static bool signal_present;
 
 //Functions used only in this file
 static void Signal_Timer_Stop(){
@@ -51,9 +52,9 @@ static uint8_t Signal_Read_Pin(){
 
 //SysTick interrupt, used for detecting signal timeout
 void Signal_SysTick_Interrupt(){
-	if(signal_reading || signal_present){
+	if(signal_reading || signal_o.signal_available){
 		if(timeout_passed_ms >= signal_ctr.timeout_ms){
-			signal_present = false;
+			signal_o.signal_available = false;
 			Signal_Gone();
 		}else{
 			timeout_passed_ms++;
@@ -74,7 +75,8 @@ void Signal_Pin_Interrupt(){
 		float length_ms  = (float)((uint32_t)Signal_Read_Timer() + (uint32_t)1) / 24000.0f;
 		Signal_Timer_Stop();
 		signal_reading = false;
-		signal_present = true;
-		Signal_Received(length_ms);
+		signal_o.signal_available = true;
+		signal_o.length_ms = length_ms;
+		Signal_Received();
 	}
 }

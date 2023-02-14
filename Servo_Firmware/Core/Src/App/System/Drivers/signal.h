@@ -2,6 +2,11 @@
 typedef struct{
 	uint32_t timeout_ms;
 }signal_ctr_t;
+typedef struct{
+	uint32_t signal_available;
+	float length_ms;
+}signal_o_t;
+
 
 //Pin level detecting configuration
 #define SIGNAL_DEBOUNCE_SAMPLES 5 
@@ -17,7 +22,8 @@ void Signal_Init();
 
 //Functions which should be implemented externally
 void Signal_Gone();
-void Signal_Received(float length_ms);
+void Signal_Received();
 
 //Control/status variables
 extern signal_ctr_t signal_ctr;
+extern signal_o_t signal_o;

@@ -45,7 +45,7 @@ void App_Loop(){
 
 		//Status request from host (incoming packet also contains configuration which we should set)
 		case USB_RQ_STAT:
-			//Copy packed struct to unpacked struct and apply configuration to functions
+			//Store received configuration in global variable and apply
 			settings_data = usb_rx_config;
 			Settings_Apply();
 
@@ -66,11 +66,8 @@ void App_Loop(){
 			//Hold position with PID request if "usb_rq_stat_phold" is set in received packet
 			if(usb_rx_status.usb_rq_stat_phold){
 				pid_i.setpoint = usb_rx_status.pid_setpoint;
-				if(!pid_o.running){
-					//In this mode PID and motor operation automatically stops after signal_ctr.timeout_ms milliseconds unless renewed
-					PID_Start();
-				}
-			}else if(settings_data.signal_ignore && pid_o.running){
+				PID_Start(); //Function also checks PID is running or not at first
+			}else if(settings_data.signal_ignore){
 				PID_Stop();
 			}
 
@@ -83,6 +80,11 @@ void App_Loop(){
 			};
 			USB_Send_Status(&status);
 		break;
+	}
+
+	//Turn off PID on USB disconnect if external signal also unavailable
+	if(!usb_o.usb_present && !signal_o.signal_available){
+		PID_Stop();
 	}
 
 	//Update USB is connected or not status variable
