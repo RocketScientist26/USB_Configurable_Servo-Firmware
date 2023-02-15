@@ -1,5 +1,6 @@
 #include <stdint.h>
 #include <stdbool.h>
+#include <math.h>
 #include "System/Drivers/led.h"
 #include "System/Drivers/motor.h"
 #include "System/Drivers/pid.h"
@@ -65,7 +66,20 @@ void App_Loop(){
 
 			//Hold position with PID request if "usb_rq_stat_phold" is set in received packet
 			if(usb_rx_status.usb_rq_stat_phold){
+				//Detect if position change is enough for LED to be fired, if it is in this mode
+				if(
+					fabs((usb_rx_status.pid_setpoint - (float)settings_data.potentiometer_min) - (pid_i.setpoint - (float)settings_data.potentiometer_min)) /
+					(
+						((float)settings_data.potentiometer_max - (float)settings_data.potentiometer_min) / 100.0f
+					)
+					>=
+					SETTINGS_LED_POSITION_CHANGE_ACCURACY_PRCNT
+				){
+					led_i.position_changed = true;
+				}
+
 				pid_i.setpoint = usb_rx_status.pid_setpoint;
+
 				PID_Start(); //Function also checks PID is running or not at first
 			}else if(settings_data.signal_ignore){
 				PID_Stop();
